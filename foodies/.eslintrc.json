@@ -1,6 +1,70 @@
 {
-  "extends": "next/core-web-vitals",
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:vitest/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["src"]
+      }
+    }
+  },
+  "ignorePatterns": ["dist", ".eslintrc.json"],
+  "plugins": ["react-refresh", "simple-import-sort", "import"],
   "rules": {
-    "@next/next/no-img-element": "off"
+    "no-undef": "error",
+    "import/no-unused-modules": ["warn", { "unusedExports": true }],
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "react/prop-types": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/prefer-default-export": 0,
+    "import/no-anonymous-default-export": 0,
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [["^\\u0000"], ["^@?\\w"], ["^@src", "^@shared"], ["^\\."]]
+      }
+    ],
+    "simple-import-sort/exports": "warn",
+    "sort-imports": "off",
+    "import/order": "off",
+    "vitest/expect-expect": "off",
+    "@next/next/no-img-element": "off",
+    "no-unused-vars": [
+      "warn",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
+    ]
+  },
+  "globals": {
+    "afterAll": true,
+    "afterEach": true,
+    "assert": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "chai": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "suite": true,
+    "test": true,
+    "vi": true,
+    "vitest": true
   }
 }

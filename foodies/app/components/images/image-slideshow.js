@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import burgerImg from "@/assets/burger.jpg";
+import burgerImg from "@/../assets/burger.jpg";
 import curryImg from "@/assets/curry.jpg";
 import dumplingsImg from "@/assets/dumplings.jpg";
 import macncheeseImg from "@/assets/macncheese.jpg";
