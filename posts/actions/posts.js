@@ -46,8 +46,8 @@ export async function createPost(prevState, formData) {
     userId: 1,
   });
 
-  redirect("/feed");
   revalidatePath("/", "layout");
+  redirect("/feed");
 }
 
 export async function togglePostLikeStatus(postId) {
